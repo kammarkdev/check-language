@@ -1,0 +1,29 @@
+﻿@model CheckLanguage.Models.TextToCheck
+
+<div class="main-content">
+    <h4 class="text-center headline">Sprawdź język wpisywanego tekstu</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Index" method="post">
+                <div class="form-group">
+                    <label asp-for="Text"  class="control-label"><span class="headline">Podaj tekst:</span></label>
+                    <textarea asp-for="Text" class="form-control" cols="80" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Sprawdź" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <span class="headline">Wybierz plik .txt:</span>
+            <div class="choose-file">
+                <form asp-controller="Home" asp-action="CheckFromFile" method="post"
+                      enctype="multipart/form-data">
+
+                    <input type="file" name="file" />
+                    <button type="submit">Sprawdź plik</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

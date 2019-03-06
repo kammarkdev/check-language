@@ -1,0 +1,44 @@
+﻿@model CheckLanguage.Models.Frequencies
+
+<div class="main-content">
+<h2>Frekwencje liter w poszczególnych językach</h2>
+
+@foreach(var item in Model.frequencies)
+    {
+    <h4>Język @item.LanguageName:</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    @for(var i='A'; i<='M'; i++)
+                    {
+                        <td>@i</td>
+                    }
+                </tr>
+            </thead>
+                <tbody>
+                <tr>
+                    @for(var i=0; i<=12; i++)
+                    {
+                        <td>@item.Frequency[i]%</td>
+                    }
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    @for(var i='N'; i<='Z'; i++)
+                    {
+                        <td>@i</td>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @for(var i=13; i<=24; i++)
+                    {
+                        <td>@item.Frequency[i]%</td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,15 @@
+﻿@model CheckLanguage.Models.TextToCheck
+
+<div class="row">
+    <div class="col-6">
+        <h2 class="headline">Język tekstu:</h2>
+        @Model.WonLanguage
+    </div>
+    <div class="col-6">
+        <h2 class="headline">Długość tekstu:</h2>
+        <p>@Model.TextLength</p>
+    </div>
+</div>
+<h2 class="headline">Wprowadzony tekst:</h2>
+<p class="text-justify">@Model.Text</p>
+

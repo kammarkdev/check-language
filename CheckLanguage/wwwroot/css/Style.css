@@ -1,0 +1,56 @@
+﻿body {
+    background-image: url("../images/dust_scratches.png");
+    background-repeat: repeat;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    width: auto;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
+}
+
+.all {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 1200px;
+}
+.content {
+    background-image: url("../images/top.jpg");
+    background-repeat: no-repeat;
+    width: 1200px;
+}
+.choose-file {
+    padding-top: 40px;
+}
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    height: 70px;
+    padding: 15px;
+}
+.header {
+    height: 343px;
+    margin: 0 auto;
+    width: 1200px;
+}
+.headline {
+    font-family: 'Pacifico', cursive;
+}
+.language-navbar {
+    justify-content: space-between;
+}
+.logo {
+    height: 40px;
+}
+.main-content {
+    padding: 20px;
+}
+.nav-item{
+    padding: 10px;
+}
+        

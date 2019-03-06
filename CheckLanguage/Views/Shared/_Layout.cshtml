@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet" />
+    <link asp-href-include="~/bootstrap/css/*.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Sprawdź język tekstu</title>
+</head>
+<body>
+    <div class="all">
+        <div class="content">
+            <partial name="_Menu" />
+
+            @RenderBody()
+
+            <partial name="_Footer" />
+        </div>
+    </div>
+    <script src="~/jquery/jquery.min.js"></script>
+    <script scr="~/popper/popper.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
