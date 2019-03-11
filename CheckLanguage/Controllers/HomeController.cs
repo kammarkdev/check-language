@@ -2,6 +2,7 @@
 using CheckLanguage.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -20,6 +21,11 @@ namespace CheckLanguage.Controllers
         [HttpPost]
         public IActionResult Index(TextToCheck textToCheck, FrequencyOfLetters frequencyOfLetters, Frequencies freq)
         {
+            if (string.IsNullOrEmpty(textToCheck.Text))
+            {
+                return Content("Należy podać tekst do przetłumaczenia");
+            }
+
             textToCheck.TextLength = textToCheck.Text.Length;
             textToCheck.Text = textToCheck.Text.ToLower();
 
