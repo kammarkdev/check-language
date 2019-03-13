@@ -19,11 +19,11 @@ namespace CheckLanguage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(TextToCheck textToCheck, FrequencyOfLetters frequencyOfLetters, Frequencies freq)
+        public ViewResult Index(TextToCheck textToCheck, FrequencyOfLetters frequencyOfLetters, Frequencies freq)
         {
             if (string.IsNullOrEmpty(textToCheck.Text))
             {
-                return Content("Należy podać tekst do przetłumaczenia");
+                return View("Error", "Należy podać tekst do przetłumaczenia!");
             }
 
             textToCheck.TextLength = textToCheck.Text.Length;
@@ -41,7 +41,7 @@ namespace CheckLanguage.Controllers
         public async Task<IActionResult> CheckFromFile (IFormFile file, TextToCheck textToCheck, Frequencies freq)
         {
             if (file == null || file.Length == 0)
-                return Content("Nie wybrano pliku");
+                return View("Error", "Nie wybrano pliku");
             var path = Path.Combine(
                         Directory.GetCurrentDirectory(), "wwwroot",
                         file.FileName);
@@ -57,7 +57,7 @@ namespace CheckLanguage.Controllers
 
             if (extension != ".txt")
             {
-                return (View("Error"));
+                return (View("Error", "Wprowadzono niepoprawny format pliku! Aplikacja obsługuje pliki .txt."));
             }
 
             textToCheck.Text = text.ToLower();
